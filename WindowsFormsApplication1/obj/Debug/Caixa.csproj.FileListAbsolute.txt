@@ -1,0 +1,69 @@
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csprojResolveAssemblyReference.cache
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCaixa.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormLogin.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCard.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCheque.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagdin.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csproj.GenerateResource.Cache
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal.mdf
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal_log.ldf
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Makco\documents\visual studio 2012\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal.mdf
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal_log.ldf
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csprojResolveAssemblyReference.cache
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCaixa.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormLogin.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCard.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCheque.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagdin.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PesquisaItens.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Wesley\Desktop\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csproj.GenerateResource.Cache
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal.mdf
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal_log.ldf
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csprojResolveAssemblyReference.cache
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadPratos.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCaixa.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormLogin.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCard.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCheque.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagdin.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PesquisaItens.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csproj.GenerateResource.Cache
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadFun.resources
+F:\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadMesa.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal.mdf
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\TCCFinal_log.ldf
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csprojResolveAssemblyReference.cache
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadFun.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadMesa.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCadPratos.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormCaixa.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormLogin.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCard.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagCheque.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FormPagdin.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PesquisaItens.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+G:\ProjetoBreno\0904Brenus Bar\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Caixa.csproj.GenerateResource.Cache
