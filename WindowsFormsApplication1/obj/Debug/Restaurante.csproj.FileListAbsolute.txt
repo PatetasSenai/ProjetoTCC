@@ -38,3 +38,6 @@ G:\ProjetoBreno\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\Rest
 C:\Users\Emerson\Documents\dev\TCCFinal\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Emerson\Documents\dev\TCCFinal\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Emerson\Documents\dev\TCCFinal\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Emerson\Documents\GitHub\ProjetoTCC\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Emerson\Documents\GitHub\ProjetoTCC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Emerson\Documents\GitHub\ProjetoTCC\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
