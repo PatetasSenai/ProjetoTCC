@@ -219,7 +219,8 @@ namespace WindowsFormsApplication1
         private void btnOK_Click(object sender, EventArgs e)
         {
             //Validar o meio de cobrança 
-            
+            // Kadinho
+
             if (rbCartao.Checked) 
             {
                 FormPagCard cartao = new FormPagCard(Double.Parse(txtTotalPedido.Text));
