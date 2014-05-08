@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
 
         }
 
-
+       
 
         public PesquisaItens(String busca, FormCaixa frmRecebido)
         {
