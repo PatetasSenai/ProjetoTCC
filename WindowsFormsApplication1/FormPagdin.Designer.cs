@@ -77,7 +77,7 @@
             // 
             // maskvltotaldin
             // 
-            this.maskvltotaldin.Location = new System.Drawing.Point(0, 41);
+            this.maskvltotaldin.Location = new System.Drawing.Point(6, 39);
             this.maskvltotaldin.Mask = "99.999,99";
             this.maskvltotaldin.Name = "maskvltotaldin";
             this.maskvltotaldin.Size = new System.Drawing.Size(100, 20);
