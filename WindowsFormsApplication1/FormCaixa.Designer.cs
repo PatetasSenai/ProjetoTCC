@@ -36,6 +36,7 @@
             this.rbCartao = new System.Windows.Forms.RadioButton();
             this.rbDinheiro = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDeletarItem = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotalPedido = new System.Windows.Forms.TextBox();
             this.gridPedido = new System.Windows.Forms.DataGridView();
@@ -88,7 +89,7 @@
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.gridEstoque = new System.Windows.Forms.DataGridView();
             this.tabMetricas = new System.Windows.Forms.TabPage();
             this.tabCadProduto.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -107,7 +108,7 @@
             this.groupBox6.SuspendLayout();
             this.tabEstoque.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstoque)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCadProduto
@@ -197,6 +198,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDeletarItem);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtTotalPedido);
             this.groupBox2.Controls.Add(this.gridPedido);
@@ -206,6 +208,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Itens da Compra";
+            // 
+            // btnDeletarItem
+            // 
+            this.btnDeletarItem.Location = new System.Drawing.Point(29, 178);
+            this.btnDeletarItem.Name = "btnDeletarItem";
+            this.btnDeletarItem.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletarItem.TabIndex = 12;
+            this.btnDeletarItem.Text = "Deletar Item";
+            this.btnDeletarItem.UseVisualStyleBackColor = true;
+            this.btnDeletarItem.Click += new System.EventHandler(this.btnDeletarItem_Click);
             // 
             // label4
             // 
@@ -228,8 +240,10 @@
             this.gridPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPedido.Location = new System.Drawing.Point(17, 22);
             this.gridPedido.Name = "gridPedido";
+            this.gridPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPedido.Size = new System.Drawing.Size(508, 150);
             this.gridPedido.TabIndex = 0;
+            this.gridPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPedido_CellClick);
             // 
             // groupBox1
             // 
@@ -332,6 +346,7 @@
             this.btnLimpapesquisa.TabIndex = 6;
             this.btnLimpapesquisa.Text = "Limpar pesquisa";
             this.btnLimpapesquisa.UseVisualStyleBackColor = true;
+            this.btnLimpapesquisa.Click += new System.EventHandler(this.btnLimpapesquisa_Click);
             // 
             // btnAddproduto
             // 
@@ -704,7 +719,7 @@
             // 
             this.groupBox10.Controls.Add(this.button12);
             this.groupBox10.Controls.Add(this.button11);
-            this.groupBox10.Controls.Add(this.dataGridView3);
+            this.groupBox10.Controls.Add(this.gridEstoque);
             this.groupBox10.Location = new System.Drawing.Point(7, 7);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(531, 443);
@@ -730,13 +745,13 @@
             this.button11.Text = "Atualizar";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // gridEstoque
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 63);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(519, 374);
-            this.dataGridView3.TabIndex = 0;
+            this.gridEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEstoque.Location = new System.Drawing.Point(6, 63);
+            this.gridEstoque.Name = "gridEstoque";
+            this.gridEstoque.Size = new System.Drawing.Size(519, 374);
+            this.gridEstoque.TabIndex = 0;
             // 
             // tabMetricas
             // 
@@ -780,7 +795,7 @@
             this.groupBox6.PerformLayout();
             this.tabEstoque.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEstoque)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +855,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabEstoque;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView gridEstoque;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.TabPage tabMetricas;
@@ -849,5 +864,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnDeletarItem;
     }
 }

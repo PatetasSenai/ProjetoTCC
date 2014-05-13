@@ -76,6 +76,7 @@
             this.btnLimppagdin.TabIndex = 14;
             this.btnLimppagdin.Text = "Limpar";
             this.btnLimppagdin.UseVisualStyleBackColor = true;
+            this.btnLimppagdin.Click += new System.EventHandler(this.btnLimppagdin_Click);
             // 
             // btnCancelpagdin
             // 
@@ -85,6 +86,7 @@
             this.btnCancelpagdin.TabIndex = 13;
             this.btnCancelpagdin.Text = "Cancelar";
             this.btnCancelpagdin.UseVisualStyleBackColor = true;
+            this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click);
             // 
             // txtValorTrocoDin
             // 
@@ -106,6 +108,7 @@
             this.txtValorRecDin.Name = "txtValorRecDin";
             this.txtValorRecDin.Size = new System.Drawing.Size(100, 20);
             this.txtValorRecDin.TabIndex = 11;
+            this.txtValorRecDin.Leave += new System.EventHandler(this.txtValorRecDin_Leave);
             // 
             // label1
             // 

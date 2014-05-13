@@ -25,12 +25,35 @@ namespace WindowsFormsApplication1
 
         private void FormPagdin_Load(object sender, EventArgs e)
         {
-
+            txtValorDinTotal.Enabled = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtValorRecDin_Leave(object sender, EventArgs e)
+        {
+            double valortotal = Double.Parse(txtValorDinTotal.Text);
+            double valorrecebido = Convert.ToDouble(txtValorRecDin.Text);
+            double valortroco = valorrecebido - valortotal;
+            txtValorTrocoDin.Text = valortroco.ToString();
+        }
+
+        private void btnLimppagdin_Click(object sender, EventArgs e)
+        {
+            txtValorTrocoDin.Clear();
+            txtValorRecDin.Clear();
+            //txtValorDinTotal.Clear();
+        }
+
+        private void btnCancelpagdin_Click(object sender, EventArgs e)
+        {
+            /*txtValorDinTotal.Clear();
+            txtValorRecDin.Clear();
+            txtValorTrocoDin.Clear();*/
+            this.Close();
         }
     }
 }

@@ -38,5 +38,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void btnPagaCard_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

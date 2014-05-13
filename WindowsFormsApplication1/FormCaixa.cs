@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         private Funcionario funcCaixa;
         double totalPedido = 0;
 
-        public void atualiza(int codigo, string nomeP, double valor )
+        public void atualiza(int codigo, string nomeP, double valor)
         {
             txtCodigoItem.Text = codigo.ToString();
             txtNomeItem.Text = nomeP;
@@ -100,6 +100,24 @@ namespace WindowsFormsApplication1
 
         private void FormCaixa_Load(object sender, EventArgs e)
         {
+            gridEstoque.Columns.Add("ID", "ID");
+            gridEstoque.Columns.Add("Item", "Item");
+            gridEstoque.Columns.Add("Quantidade", "Quantidade");
+
+            string estoque = "select id, nome, quantidade from ItensCardapio";
+            SqlConnection estoquecon = Conexao.obterConexao();
+            SqlCommand estoquecmd = new SqlCommand(estoque, estoquecon);
+            estoquecmd.CommandType = CommandType.Text;
+
+
+            gridPedido.Columns.Add("Código", "Código");
+            gridPedido.Columns.Add("Descrição", "Descrição");
+            gridPedido.Columns.Add("Valor Unit", "Valor Unit");
+            gridPedido.Columns.Add("Quantidade", "Quantidade");
+            gridPedido.Columns.Add("Valor Total", "Valor Total");
+
+
+
             txtNomeItem.Enabled = false;
             txtValorItem.Enabled = false;
             if (funcCaixa.Ocupacao != "ADM")
@@ -130,7 +148,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PesquisaItens Pesquisaitens = new PesquisaItens(txtBusca.Text,this);
+            PesquisaItens Pesquisaitens = new PesquisaItens(txtBusca.Text, this);
             Pesquisaitens.ShowDialog();
             txtQuantidade.Focus();
         }
@@ -161,13 +179,12 @@ namespace WindowsFormsApplication1
                 v = dr.GetString(0);
                 v2 = dr.GetDecimal(1).ToString();
             }
-            
-            
+
+
         }
 
         private void btnAddproduto_Click(object sender, EventArgs e)
         {
-            
             string quantidade = txtQuantidade.Text;
             string valorUnit = txtValorItem.Text;
             double valorTotal = Convert.ToInt32(quantidade) * Convert.ToDouble(valorUnit);
@@ -177,32 +194,18 @@ namespace WindowsFormsApplication1
 
                 MessageBox.Show("Escolha um Item Válido");
             }
-            else 
+            else
             {
-                int linhasGrid = gridPedido.RowCount;
-                if (linhasGrid == 0)
-                {
-                    gridPedido.Columns.Add("Código", "Código");
-                    gridPedido.Columns.Add("Descrição", "Descrição");
-                    gridPedido.Columns.Add("Valor Unit", "Valor Unit");
-                    gridPedido.Columns.Add("Quantidade", "Quantidade");
-                    gridPedido.Columns.Add("Valor Total", "Valor Total");
-                    gridPedido.Rows.Add(txtCodigoItem.Text, txtNomeItem.Text, txtValorItem.Text, txtQuantidade.Text, valorTotal.ToString());
-                    totalPedido = valorTotal;
-                    
-                }
-                else 
-                {
-                    gridPedido.Rows.Add(txtCodigoItem.Text, txtNomeItem.Text, txtValorItem.Text, txtQuantidade.Text, valorTotal.ToString());
-                    totalPedido += valorTotal;
-                }
+
+                gridPedido.Rows.Add(txtCodigoItem.Text, txtNomeItem.Text, txtValorItem.Text, txtQuantidade.Text, valorTotal.ToString());
+                totalPedido = valorTotal;
                 txtTotalPedido.Text = totalPedido.ToString();
                 txtBusca.Clear();
                 txtCodigoItem.Clear();
                 txtNomeItem.Clear();
                 txtValorItem.Clear();
                 txtQuantidade.Clear();
-                
+
             }
         }
 
@@ -218,23 +221,24 @@ namespace WindowsFormsApplication1
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //Validar o meio de cobrança 
-            // Kadinho
-
-            if (rbCartao.Checked) 
+            if (rbCartao.Checked)
             {
                 FormPagCard cartao = new FormPagCard(Double.Parse(txtTotalPedido.Text));
                 cartao.Show();
             }
-            if (rbCheque.Checked)
+            else if (rbCheque.Checked)
             {
                 FormPagCheque cheque = new FormPagCheque(Double.Parse(txtTotalPedido.Text));
                 cheque.Show();
             }
-            if (rbDinheiro.Checked)
+            else if (rbDinheiro.Checked)
             {
                 FormPagdin dinheiro = new FormPagdin(Double.Parse(txtTotalPedido.Text));
                 dinheiro.Show();
+            }
+            else
+            {
+                MessageBox.Show("Escolha uma Forma de Pagamento!");
             }
         }
 
@@ -264,6 +268,41 @@ namespace WindowsFormsApplication1
             FormCadMesa novoform1 = new FormCadMesa();
             novoform1.StartPosition = FormStartPosition.CenterScreen;
             novoform1.Show();
+        }
+
+        private void btnLimpapesquisa_Click(object sender, EventArgs e)
+        {
+            txtBusca.Clear();
+            txtCodigoItem.Clear();
+            txtNomeItem.Clear();
+            txtQuantidade.Clear();
+            txtValorItem.Clear();
+        }
+
+        private void btnDeletarItem_Click(object sender, EventArgs e)
+        {
+            //string itemExcluido = gridPedido.SelectedCells[4].ToString();
+
+            //double itemExcluido = Convert.ToDouble(gridPedido.SelectedCells[4].ToString());
+            //gridPedido.Rows.Remove(gridPedido.Rows[gridPedido.CurrentRow.Index]);
+            //txtTotalPedido.Text = (Convert.ToDouble(txtTotalPedido.ToString()) - itemExcluido).ToString();
+
+            if (gridPedido.SelectedRows.Count > 0)
+            {
+                DataGridViewRow linha = gridPedido.SelectedRows[0];
+                double valorExcluido = Double.Parse(linha.Cells[4].Value.ToString());
+                valorExcluido = Double.Parse(txtTotalPedido.Text) - valorExcluido;
+                txtTotalPedido.Text = valorExcluido.ToString();
+                gridPedido.Rows.Remove(gridPedido.Rows[gridPedido.CurrentRow.Index]);
+
+
+            }
+
+
+        }
+
+        private void gridPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }
