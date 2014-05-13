@@ -17,10 +17,14 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        public FormPagdin(double totalPedido)
+        String busca = null;
+        FormPagdin frmAtualizar = null;
+
+        public FormPagdin( String busca)
         {
             InitializeComponent();
-            txtValorDinTotal.Text = totalPedido.ToString();
+            maskvltotaldin.Text = busca.ToString();
+            MessageBox.Show(busca.ToString());
         }
 
         private void FormPagdin_Load(object sender, EventArgs e)
@@ -33,16 +37,27 @@ namespace WindowsFormsApplication1
 
         }
 
+<<<<<<< HEAD
         private void txtValorRecDin_Leave(object sender, EventArgs e)
         {
             double valortotal = Double.Parse(txtValorDinTotal.Text);
             double valorrecebido = Convert.ToDouble(txtValorRecDin.Text);
             double valortroco = valorrecebido - valortotal;
             txtValorTrocoDin.Text = valortroco.ToString();
+=======
+        private void btnCancelpagdin_Click(object sender, EventArgs e)
+        {
+            DialogResult Resultado = MessageBox.Show(" Deseja Cancelar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
+>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
 
         private void btnLimppagdin_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             txtValorTrocoDin.Clear();
             txtValorRecDin.Clear();
             //txtValorDinTotal.Clear();
@@ -54,6 +69,18 @@ namespace WindowsFormsApplication1
             txtValorRecDin.Clear();
             txtValorTrocoDin.Clear();*/
             this.Close();
+=======
+            maskvltotaldin.Clear();
+            maskvlrecdin.Clear();
+            maskvltrocodin.Clear();
+        }
+
+        public string valortotal { get; set; }
+
+        private void maskvltotaldin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
     }
 }

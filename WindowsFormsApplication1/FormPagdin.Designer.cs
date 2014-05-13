@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maskvltrocodin = new System.Windows.Forms.MaskedTextBox();
+            this.maskvlrecdin = new System.Windows.Forms.MaskedTextBox();
+            this.maskvltotaldin = new System.Windows.Forms.MaskedTextBox();
             this.btnConcPagdin = new System.Windows.Forms.Button();
             this.btnLimppagdin = new System.Windows.Forms.Button();
             this.btnCancelpagdin = new System.Windows.Forms.Button();
-            this.txtValorTrocoDin = new System.Windows.Forms.TextBox();
-            this.txtValorDinTotal = new System.Windows.Forms.TextBox();
-            this.txtValorRecDin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,12 +43,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskvltrocodin);
+            this.groupBox1.Controls.Add(this.maskvlrecdin);
+            this.groupBox1.Controls.Add(this.maskvltotaldin);
             this.groupBox1.Controls.Add(this.btnConcPagdin);
             this.groupBox1.Controls.Add(this.btnLimppagdin);
             this.groupBox1.Controls.Add(this.btnCancelpagdin);
-            this.groupBox1.Controls.Add(this.txtValorTrocoDin);
-            this.groupBox1.Controls.Add(this.txtValorDinTotal);
-            this.groupBox1.Controls.Add(this.txtValorRecDin);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -58,6 +58,31 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagamento em dinheiro";
+            // 
+            // maskvltrocodin
+            // 
+            this.maskvltrocodin.Location = new System.Drawing.Point(6, 117);
+            this.maskvltrocodin.Mask = "99.999,99";
+            this.maskvltrocodin.Name = "maskvltrocodin";
+            this.maskvltrocodin.Size = new System.Drawing.Size(100, 20);
+            this.maskvltrocodin.TabIndex = 19;
+            // 
+            // maskvlrecdin
+            // 
+            this.maskvlrecdin.Location = new System.Drawing.Point(6, 78);
+            this.maskvlrecdin.Mask = "99.999,99";
+            this.maskvlrecdin.Name = "maskvlrecdin";
+            this.maskvlrecdin.Size = new System.Drawing.Size(100, 20);
+            this.maskvlrecdin.TabIndex = 18;
+            // 
+            // maskvltotaldin
+            // 
+            this.maskvltotaldin.Location = new System.Drawing.Point(6, 39);
+            this.maskvltotaldin.Mask = "99.999,99";
+            this.maskvltotaldin.Name = "maskvltotaldin";
+            this.maskvltotaldin.Size = new System.Drawing.Size(100, 20);
+            this.maskvltotaldin.TabIndex = 17;
+            this.maskvltotaldin.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskvltotaldin_MaskInputRejected);
             // 
             // btnConcPagdin
             // 
@@ -87,6 +112,7 @@
             this.btnCancelpagdin.Text = "Cancelar";
             this.btnCancelpagdin.UseVisualStyleBackColor = true;
             this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click);
+<<<<<<< HEAD
             // 
             // txtValorTrocoDin
             // 
@@ -109,6 +135,8 @@
             this.txtValorRecDin.Size = new System.Drawing.Size(100, 20);
             this.txtValorRecDin.TabIndex = 11;
             this.txtValorRecDin.Leave += new System.EventHandler(this.txtValorRecDin_Leave);
+=======
+>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
             // 
             // label1
             // 
@@ -158,12 +186,12 @@
         private System.Windows.Forms.Button btnConcPagdin;
         private System.Windows.Forms.Button btnLimppagdin;
         private System.Windows.Forms.Button btnCancelpagdin;
-        private System.Windows.Forms.TextBox txtValorTrocoDin;
-        private System.Windows.Forms.TextBox txtValorDinTotal;
-        private System.Windows.Forms.TextBox txtValorRecDin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox maskvltrocodin;
+        private System.Windows.Forms.MaskedTextBox maskvlrecdin;
+        private System.Windows.Forms.MaskedTextBox maskvltotaldin;
 
     }
 }

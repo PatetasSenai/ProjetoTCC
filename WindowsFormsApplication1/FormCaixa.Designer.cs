@@ -63,27 +63,26 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabCadastro = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.dgAtualizaMesas = new System.Windows.Forms.DataGridView();
+            this.btnCadMesa = new System.Windows.Forms.Button();
+            this.btnDeletamesa = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dgAtualizaFuncionarios = new System.Windows.Forms.DataGridView();
+            this.btnCadFuc = new System.Windows.Forms.Button();
+            this.btnAtualizaFunc = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.dgAtualizaItens = new System.Windows.Forms.DataGridView();
+            this.btnCadItens = new System.Windows.Forms.Button();
+            this.btnAtualizaIten = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dgAtualizaPratos = new System.Windows.Forms.DataGridView();
+            this.btnCadPratos = new System.Windows.Forms.Button();
+            this.btnAtualizaPrato = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tabEstoque = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -91,6 +90,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.gridEstoque = new System.Windows.Forms.DataGridView();
             this.tabMetricas = new System.Windows.Forms.TabPage();
+            this.mktotaldin = new System.Windows.Forms.MaskedTextBox();
             this.tabCadProduto.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,9 +103,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabCadastro.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaMesas)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaFuncionarios)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaItens)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaPratos)).BeginInit();
             this.tabEstoque.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstoque)).BeginInit();
@@ -453,12 +457,14 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Dinheiro";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this.radioButton6.Leave += new System.EventHandler(this.radioButton6_Leave);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.mktotaldin);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.comboBox2);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.dataGridView2);
@@ -488,13 +494,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Valor total";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(401, 207);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(115, 20);
-            this.textBox5.TabIndex = 3;
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -510,7 +509,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 35);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Fechar";
+            this.button2.Text = "Fechar Pedido";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -539,9 +538,9 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button9);
-            this.groupBox9.Controls.Add(this.button10);
-            this.groupBox9.Controls.Add(this.comboBox6);
+            this.groupBox9.Controls.Add(this.dgAtualizaMesas);
+            this.groupBox9.Controls.Add(this.btnCadMesa);
+            this.groupBox9.Controls.Add(this.btnDeletamesa);
             this.groupBox9.Location = new System.Drawing.Point(10, 277);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(531, 84);
@@ -549,38 +548,39 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Mesas";
             // 
-            // button9
+            // dgAtualizaMesas
             // 
-            this.button9.Location = new System.Drawing.Point(133, 46);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(98, 23);
-            this.button9.TabIndex = 6;
-            this.button9.Text = "Cadastrar";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.dgAtualizaMesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAtualizaMesas.Location = new System.Drawing.Point(124, 10);
+            this.dgAtualizaMesas.Name = "dgAtualizaMesas";
+            this.dgAtualizaMesas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAtualizaMesas.Size = new System.Drawing.Size(398, 68);
+            this.dgAtualizaMesas.TabIndex = 8;
             // 
-            // button10
+            // btnCadMesa
             // 
-            this.button10.Location = new System.Drawing.Point(133, 17);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(98, 23);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Deletar";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnCadMesa.Location = new System.Drawing.Point(6, 48);
+            this.btnCadMesa.Name = "btnCadMesa";
+            this.btnCadMesa.Size = new System.Drawing.Size(98, 23);
+            this.btnCadMesa.TabIndex = 6;
+            this.btnCadMesa.Text = "Cadastrar";
+            this.btnCadMesa.UseVisualStyleBackColor = true;
+            this.btnCadMesa.Click += new System.EventHandler(this.button9_Click);
             // 
-            // comboBox6
+            // btnDeletamesa
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(6, 19);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
-            this.comboBox6.TabIndex = 4;
+            this.btnDeletamesa.Location = new System.Drawing.Point(6, 19);
+            this.btnDeletamesa.Name = "btnDeletamesa";
+            this.btnDeletamesa.Size = new System.Drawing.Size(98, 23);
+            this.btnDeletamesa.TabIndex = 5;
+            this.btnDeletamesa.Text = "Deletar";
+            this.btnDeletamesa.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.button7);
-            this.groupBox8.Controls.Add(this.button8);
-            this.groupBox8.Controls.Add(this.comboBox5);
+            this.groupBox8.Controls.Add(this.dgAtualizaFuncionarios);
+            this.groupBox8.Controls.Add(this.btnCadFuc);
+            this.groupBox8.Controls.Add(this.btnAtualizaFunc);
             this.groupBox8.Location = new System.Drawing.Point(7, 187);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(531, 84);
@@ -588,38 +588,39 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Funcionários";
             // 
-            // button7
+            // dgAtualizaFuncionarios
             // 
-            this.button7.Location = new System.Drawing.Point(133, 46);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(98, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Cadastrar";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.dgAtualizaFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAtualizaFuncionarios.Location = new System.Drawing.Point(127, 10);
+            this.dgAtualizaFuncionarios.Name = "dgAtualizaFuncionarios";
+            this.dgAtualizaFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAtualizaFuncionarios.Size = new System.Drawing.Size(398, 68);
+            this.dgAtualizaFuncionarios.TabIndex = 8;
             // 
-            // button8
+            // btnCadFuc
             // 
-            this.button8.Location = new System.Drawing.Point(133, 17);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(98, 23);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Atualizar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnCadFuc.Location = new System.Drawing.Point(9, 48);
+            this.btnCadFuc.Name = "btnCadFuc";
+            this.btnCadFuc.Size = new System.Drawing.Size(98, 23);
+            this.btnCadFuc.TabIndex = 6;
+            this.btnCadFuc.Text = "Cadastrar";
+            this.btnCadFuc.UseVisualStyleBackColor = true;
+            this.btnCadFuc.Click += new System.EventHandler(this.button7_Click);
             // 
-            // comboBox5
+            // btnAtualizaFunc
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(6, 19);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 4;
+            this.btnAtualizaFunc.Location = new System.Drawing.Point(9, 19);
+            this.btnAtualizaFunc.Name = "btnAtualizaFunc";
+            this.btnAtualizaFunc.Size = new System.Drawing.Size(98, 23);
+            this.btnAtualizaFunc.TabIndex = 5;
+            this.btnAtualizaFunc.Text = "Atualizar";
+            this.btnAtualizaFunc.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button6);
-            this.groupBox7.Controls.Add(this.button5);
-            this.groupBox7.Controls.Add(this.comboBox4);
+            this.groupBox7.Controls.Add(this.dgAtualizaItens);
+            this.groupBox7.Controls.Add(this.btnCadItens);
+            this.groupBox7.Controls.Add(this.btnAtualizaIten);
             this.groupBox7.Location = new System.Drawing.Point(7, 97);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(531, 84);
@@ -627,39 +628,39 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Itens";
             // 
-            // button6
+            // dgAtualizaItens
             // 
-            this.button6.Location = new System.Drawing.Point(133, 46);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(98, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Cadastrar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.dgAtualizaItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAtualizaItens.Location = new System.Drawing.Point(127, 10);
+            this.dgAtualizaItens.Name = "dgAtualizaItens";
+            this.dgAtualizaItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAtualizaItens.Size = new System.Drawing.Size(398, 68);
+            this.dgAtualizaItens.TabIndex = 8;
             // 
-            // button5
+            // btnCadItens
             // 
-            this.button5.Location = new System.Drawing.Point(133, 17);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(98, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Atualizar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCadItens.Location = new System.Drawing.Point(9, 48);
+            this.btnCadItens.Name = "btnCadItens";
+            this.btnCadItens.Size = new System.Drawing.Size(98, 23);
+            this.btnCadItens.TabIndex = 6;
+            this.btnCadItens.Text = "Cadastrar";
+            this.btnCadItens.UseVisualStyleBackColor = true;
+            this.btnCadItens.Click += new System.EventHandler(this.button6_Click);
             // 
-            // comboBox4
+            // btnAtualizaIten
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(6, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 4;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.btnAtualizaIten.Location = new System.Drawing.Point(9, 19);
+            this.btnAtualizaIten.Name = "btnAtualizaIten";
+            this.btnAtualizaIten.Size = new System.Drawing.Size(98, 23);
+            this.btnAtualizaIten.TabIndex = 5;
+            this.btnAtualizaIten.Text = "Atualizar";
+            this.btnAtualizaIten.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Controls.Add(this.comboBox3);
+            this.groupBox6.Controls.Add(this.dgAtualizaPratos);
+            this.groupBox6.Controls.Add(this.btnCadPratos);
+            this.groupBox6.Controls.Add(this.btnAtualizaPrato);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Location = new System.Drawing.Point(7, 7);
             this.groupBox6.Name = "groupBox6";
@@ -669,32 +670,35 @@
             this.groupBox6.Text = "Cadastro de Pratos";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // button4
+            // dgAtualizaPratos
             // 
-            this.button4.Location = new System.Drawing.Point(133, 46);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(98, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Cadastrar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.dgAtualizaPratos.AccessibleDescription = "";
+            this.dgAtualizaPratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAtualizaPratos.Location = new System.Drawing.Point(127, 10);
+            this.dgAtualizaPratos.Name = "dgAtualizaPratos";
+            this.dgAtualizaPratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgAtualizaPratos.Size = new System.Drawing.Size(398, 68);
+            this.dgAtualizaPratos.TabIndex = 7;
             // 
-            // button3
+            // btnCadPratos
             // 
-            this.button3.Location = new System.Drawing.Point(133, 17);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(98, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Atualizar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCadPratos.Location = new System.Drawing.Point(9, 46);
+            this.btnCadPratos.Name = "btnCadPratos";
+            this.btnCadPratos.Size = new System.Drawing.Size(98, 23);
+            this.btnCadPratos.TabIndex = 5;
+            this.btnCadPratos.Text = "Cadastrar";
+            this.btnCadPratos.UseVisualStyleBackColor = true;
+            this.btnCadPratos.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBox3
+            // btnAtualizaPrato
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(6, 19);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 3;
+            this.btnAtualizaPrato.Location = new System.Drawing.Point(9, 17);
+            this.btnAtualizaPrato.Name = "btnAtualizaPrato";
+            this.btnAtualizaPrato.Size = new System.Drawing.Size(98, 23);
+            this.btnAtualizaPrato.TabIndex = 4;
+            this.btnAtualizaPrato.Text = "Atualizar";
+            this.btnAtualizaPrato.UseVisualStyleBackColor = true;
+            this.btnAtualizaPrato.Click += new System.EventHandler(this.btnAtualizaPrato_Click);
             // 
             // label9
             // 
@@ -763,6 +767,14 @@
             this.tabMetricas.Text = "Metricas";
             this.tabMetricas.UseVisualStyleBackColor = true;
             // 
+            // mktotaldin
+            // 
+            this.mktotaldin.Location = new System.Drawing.Point(401, 204);
+            this.mktotaldin.Mask = "99.999,99";
+            this.mktotaldin.Name = "mktotaldin";
+            this.mktotaldin.Size = new System.Drawing.Size(100, 20);
+            this.mktotaldin.TabIndex = 18;
+            // 
             // FormCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,10 +801,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabCadastro.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaMesas)).EndInit();
             this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaFuncionarios)).EndInit();
             this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaItens)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAtualizaPratos)).EndInit();
             this.tabEstoque.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstoque)).EndInit();
@@ -829,7 +845,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radioButton4;
@@ -838,21 +853,17 @@
         private System.Windows.Forms.TabPage tabCadastro;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button btnCadMesa;
+        private System.Windows.Forms.Button btnDeletamesa;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button btnCadFuc;
+        private System.Windows.Forms.Button btnAtualizaFunc;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCadItens;
+        private System.Windows.Forms.Button btnAtualizaIten;
+        private System.Windows.Forms.Button btnCadPratos;
+        private System.Windows.Forms.Button btnAtualizaPrato;
         private System.Windows.Forms.TabPage tabEstoque;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.DataGridView gridEstoque;
@@ -864,6 +875,14 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label8;
+<<<<<<< HEAD
         private System.Windows.Forms.Button btnDeletarItem;
+=======
+        private System.Windows.Forms.DataGridView dgAtualizaMesas;
+        private System.Windows.Forms.DataGridView dgAtualizaFuncionarios;
+        private System.Windows.Forms.DataGridView dgAtualizaItens;
+        private System.Windows.Forms.DataGridView dgAtualizaPratos;
+        private System.Windows.Forms.MaskedTextBox mktotaldin;
+>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
     }
 }

@@ -61,7 +61,11 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (radioButton6.Checked == true)
+            {
+                FormPagdin frm = new FormPagdin(mktotaldin.Text);
+                frm.Show();
+            }
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -129,7 +133,205 @@ namespace WindowsFormsApplication1
 
 
             }
+            else
+            {
+                dgAtualizaMesas.Columns.Add("ID", "ID");
+                dgAtualizaMesas.Columns.Add("Descrição", "Descrição");
+
+                dgAtualizaItens.Columns.Add("ID", "ID");
+                dgAtualizaItens.Columns.Add("Nome", "Nome");
+                dgAtualizaItens.Columns.Add("Valor de Venda", "Valor de Venda");
+
+                dgAtualizaPratos.Columns.Add("ID", "ID");
+                dgAtualizaPratos.Columns.Add("Nome", "Nome");
+                dgAtualizaPratos.Columns.Add("Valor de Venda", "Valor de Venda");
+
+                dgAtualizaFuncionarios.Columns.Add("ID", "ID");
+                dgAtualizaFuncionarios.Columns.Add("Nome", "Nome");
+                dgAtualizaFuncionarios.Columns.Add("Login", "Login");
+
+                string gridFuncionarios = "select id, nome, login from Funcionario";
+                SqlConnection conn = Conexao.obterConexao();
+                SqlCommand cmdFuncionario = new SqlCommand(gridFuncionarios, conn);
+                cmdFuncionario.CommandType = CommandType.Text;
+                SqlDataReader drFuncionario = cmdFuncionario.ExecuteReader();
+                int colunasFuncionarios = drFuncionario.FieldCount;
+                string[] linhaFuncionarios = new string[colunasFuncionarios];
+                while (drFuncionario.Read())
+                {
+
+                    //percorre cada uma das colunas
+
+                    for (int a = 0; a < colunasFuncionarios; a++)
+                    {
+
+                        //verifica o tipo de dados da coluna
+
+                        if (drFuncionario.GetFieldType(a).ToString() == "System.Int32")
+                        {
+
+                            linhaFuncionarios[a] = drFuncionario.GetInt32(a).ToString();
+
+                        }
+
+
+                        if (drFuncionario.GetFieldType(a).ToString() == "System.String")
+                        {
+
+                            linhaFuncionarios[a] = drFuncionario.GetString(a).ToString();
+
+                        }
+
+                        if (drFuncionario.GetFieldType(a).ToString() == "System.String")
+                        {
+
+                            linhaFuncionarios[a] = drFuncionario.GetString(a).ToString();
+
+                        }
+
+                    }
+                    dgAtualizaFuncionarios.Rows.Add(linhaFuncionarios);
+                    conn.Close();
+
+
+
+
+
+                    string gridItens = "select id, nome, valorvenda from ItensCardapio where categoria = Itens";
+                    conn = Conexao.obterConexao();
+                    SqlCommand cmdItens = new SqlCommand(gridItens, conn);
+                    cmdFuncionario.CommandType = CommandType.Text;
+                    SqlDataReader drItens = cmdFuncionario.ExecuteReader();
+                    int colunasItens = drItens.FieldCount;
+                    string[] linhaItens = new string[colunasItens];
+                    while (drItens.Read())
+                    {
+
+                        //percorre cada uma das colunas
+
+                        for (int a = 0; a < colunasItens; a++)
+                        {
+
+                            //verifica o tipo de dados da coluna
+
+                            if (drItens.GetFieldType(a).ToString() == "System.Int32")
+                            {
+
+                                linhaItens[a] = drItens.GetInt32(a).ToString();
+
+                            }
+
+
+                            if (drItens.GetFieldType(a).ToString() == "System.String")
+                            {
+
+                                linhaItens[a] = drItens.GetString(a).ToString();
+
+                            }
+
+                            if (drItens.GetFieldType(a).ToString() == "System.Decimal")
+                            {
+
+                                linhaItens[a] = drItens.GetDecimal(a).ToString();
+
+                            }
+
+                        }
+                        dgAtualizaItens.Rows.Add(linhaFuncionarios);
+                        conn.Close();
+
+
+
+                        string gridPratos = "select id, nome, valorvenda from ItensCardapio where categoria = Pratos";
+                        conn = Conexao.obterConexao();
+                        SqlCommand cmdPratos = new SqlCommand(gridPratos, conn);
+                        cmdPratos.CommandType = CommandType.Text;
+                        SqlDataReader drPratos = cmdPratos.ExecuteReader();
+                        int colunasPratos = drPratos.FieldCount;
+                        string[] linhaPratos = new string[colunasPratos];
+                        while (drPratos.Read())
+                        {
+
+                            //percorre cada uma das colunas
+
+                            for (int a = 0; a < colunasPratos; a++)
+                            {
+
+                                //verifica o tipo de dados da coluna
+
+                                if (drPratos.GetFieldType(a).ToString() == "System.Int32")
+                                {
+
+                                    linhaPratos[a] = drPratos.GetInt32(a).ToString();
+
+                                }
+
+
+                                if (drPratos.GetFieldType(a).ToString() == "System.String")
+                                {
+
+                                    linhaPratos[a] = drPratos.GetString(a).ToString();
+
+                                }
+
+                                if (drPratos.GetFieldType(a).ToString() == "System.Decimal")
+                                {
+
+                                    linhaPratos[a] = drPratos.GetDecimal(a).ToString();
+
+                                }
+
+                            }
+                            dgAtualizaPratos.Rows.Add(linhaPratos);
+                            conn.Close();
+
+
+                            string gridMesas = "select * from Mesa";
+                            conn = Conexao.obterConexao();
+                            SqlCommand cmdMesas = new SqlCommand(gridMesas, conn);
+                            cmdMesas.CommandType = CommandType.Text;
+                            SqlDataReader drMesas = cmdMesas.ExecuteReader();
+                            int colunasMesas = drMesas.FieldCount;
+                            string[] linhaMesas = new string[colunasMesas];
+                            while (drMesas.Read())
+                            {
+
+                                //percorre cada uma das colunas
+
+                                for (int a = 0; a < colunasMesas; a++)
+                                {
+
+                                    //verifica o tipo de dados da coluna
+
+                                    if (drMesas.GetFieldType(a).ToString() == "System.Int32")
+                                    {
+
+                                        linhaMesas[a] = drMesas.GetInt32(a).ToString();
+
+                                    }
+
+
+                                    if (drMesas.GetFieldType(a).ToString() == "System.String")
+                                    {
+
+                                        linhaMesas[a] = drMesas.GetString(a).ToString();
+
+                                    }
+
+                                }
+                                dgAtualizaMesas.Rows.Add(linhaPratos);
+                                conn.Close();
+
+
+                                // select id, nome, valorvenda from ItensCardapio where categoria = Pratos
+                                // select id, nome, valorvenda from ItensCardapio where categoria = Itens
+                            }
+                        }
+                    }
+                }
+            }
         }
+
 
         private void tabCadProduto_Selecting(object sender, TabControlCancelEventArgs e)
         {
@@ -233,7 +435,7 @@ namespace WindowsFormsApplication1
             }
             else if (rbDinheiro.Checked)
             {
-                FormPagdin dinheiro = new FormPagdin(Double.Parse(txtTotalPedido.Text));
+                FormPagdin dinheiro = new FormPagdin(mktotaldin.Text);
                 dinheiro.Show();
             }
             else
@@ -270,6 +472,7 @@ namespace WindowsFormsApplication1
             novoform1.Show();
         }
 
+<<<<<<< HEAD
         private void btnLimpapesquisa_Click(object sender, EventArgs e)
         {
             txtBusca.Clear();
@@ -303,6 +506,22 @@ namespace WindowsFormsApplication1
 
         private void gridPedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+=======
+        private void btnAtualizaPrato_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton6_Leave(object sender, EventArgs e)
+        {
+            FormPagdin pagdim = new FormPagdin();
+            pagdim.ShowDialog();
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+
+>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
     }
 }
