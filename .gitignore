@@ -3,3 +3,7 @@
 *.suo
 *.cache
 *.Cache
+*.cache
+WindowsFormsApplication1/obj/Debug/Restaurante.csproj.GenerateResource.Cache
+*.Cache
+WindowsFormsApplication1/obj/Debug/Restaurante.csprojResolveAssemblyReference.cache
