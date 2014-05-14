@@ -111,7 +111,30 @@
             this.btnCancelpagdin.TabIndex = 13;
             this.btnCancelpagdin.Text = "Cancelar";
             this.btnCancelpagdin.UseVisualStyleBackColor = true;
-            this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click);
+            //this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click);
+
+            // 
+            // txtValorTrocoDin
+            // 
+            //this.txtValorTrocoDin.Location = new System.Drawing.Point(6, 117);
+            //this.txtValorTrocoDin.Name = "txtValorTrocoDin";
+            //this.txtValorTrocoDin.Size = new System.Drawing.Size(100, 20);
+            //this.txtValorTrocoDin.TabIndex = 12;
+            // 
+            // txtValorDinTotal
+            // 
+            //this.txtValorDinTotal.Location = new System.Drawing.Point(6, 39);
+            //this.txtValorDinTotal.Name = "txtValorDinTotal";
+            //this.txtValorDinTotal.Size = new System.Drawing.Size(100, 20);
+            //this.txtValorDinTotal.TabIndex = 10;
+            // 
+            // txtValorRecDin
+            // 
+            //this.txtValorRecDin.Location = new System.Drawing.Point(6, 78);
+            //this.txtValorRecDin.Name = "txtValorRecDin";
+            //this.txtValorRecDin.Size = new System.Drawing.Size(100, 20);
+            //this.txtValorRecDin.TabIndex = 11;
+            //this.txtValorRecDin.Leave += new System.EventHandler(this.txtValorRecDin_Leave);
             // 
             // label1
             // 

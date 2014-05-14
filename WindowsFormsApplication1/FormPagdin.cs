@@ -29,12 +29,22 @@ namespace WindowsFormsApplication1
 
         private void FormPagdin_Load(object sender, EventArgs e)
         {
-
+            //txtValorDinTotal.Enabled = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+//<<<<<<< HEAD
+        private void txtValorRecDin_Leave(object sender, EventArgs e)
+        {
+            //           double valortotal = Double.Parse(txtValorDinTotal.Text);
+            //           double valorrecebido = Convert.ToDouble(txtValorRecDin.Text);
+            //           double valortroco = valorrecebido - valortotal;
+            //           txtValorTrocoDin.Text = valortroco.ToString();
+            //=======
         }
 
         private void btnCancelpagdin_Click(object sender, EventArgs e)
@@ -44,20 +54,35 @@ namespace WindowsFormsApplication1
             {
                 this.Close();
             }
+//>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
 
         private void btnLimppagdin_Click(object sender, EventArgs e)
         {
-            maskvltotaldin.Clear();
-            maskvlrecdin.Clear();
-            maskvltrocodin.Clear();
+//<<<<<<< HEAD
+//            txtValorTrocoDin.Clear();
+//            txtValorRecDin.Clear();
+            //txtValorDinTotal.Clear();
         }
+
+        //private void btnCancelpagdin_Click(object sender, EventArgs e)
+        //{
+            /*txtValorDinTotal.Clear();
+            txtValorRecDin.Clear();
+            txtValorTrocoDin.Clear();*/
+            //this.Close();
+//=======
+            //maskvltotaldin.Clear();
+            //maskvlrecdin.Clear();
+            //maskvltrocodin.Clear();
+        //}
 
         public string valortotal { get; set; }
 
         private void maskvltotaldin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+//>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
     }
 }
