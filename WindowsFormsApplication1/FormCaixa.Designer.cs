@@ -875,14 +875,14 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label label8;
-<<<<<<< HEAD
+//<<<<<<< HEAD
         private System.Windows.Forms.Button btnDeletarItem;
-=======
+//=======
         private System.Windows.Forms.DataGridView dgAtualizaMesas;
         private System.Windows.Forms.DataGridView dgAtualizaFuncionarios;
         private System.Windows.Forms.DataGridView dgAtualizaItens;
         private System.Windows.Forms.DataGridView dgAtualizaPratos;
         private System.Windows.Forms.MaskedTextBox mktotaldin;
->>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
+//>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
     }
 }

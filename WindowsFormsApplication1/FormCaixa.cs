@@ -159,7 +159,7 @@ namespace WindowsFormsApplication1
                 string[] linhaFuncionarios = new string[colunasFuncionarios];
                 while (drFuncionario.Read())
                 {
-
+                    //MessageBox.Show(conn.State.ToString());
                     //percorre cada uma das colunas
 
                     for (int a = 0; a < colunasFuncionarios; a++)
@@ -190,145 +190,144 @@ namespace WindowsFormsApplication1
                         }
 
                     }
+
                     dgAtualizaFuncionarios.Rows.Add(linhaFuncionarios);
-                    conn.Close();
 
+                }
+                drFuncionario.Close();
 
+                string gridItens = "select id, nome, valorvenda from ItensCardapio where categoria = 'Itens'";
+                //conn = Conexao.obterConexao();
+                SqlCommand cmdItens = new SqlCommand(gridItens, conn);
+                cmdItens.CommandType = CommandType.Text;
+                SqlDataReader drItens = cmdItens.ExecuteReader();
+                int colunasItens = drItens.FieldCount;
+                string[] linhaItens = new string[colunasItens];
+                while (drItens.Read())
+                {
 
+                    //percorre cada uma das colunas
 
-
-                    string gridItens = "select id, nome, valorvenda from ItensCardapio where categoria = Itens";
-                    conn = Conexao.obterConexao();
-                    SqlCommand cmdItens = new SqlCommand(gridItens, conn);
-                    cmdFuncionario.CommandType = CommandType.Text;
-                    SqlDataReader drItens = cmdFuncionario.ExecuteReader();
-                    int colunasItens = drItens.FieldCount;
-                    string[] linhaItens = new string[colunasItens];
-                    while (drItens.Read())
+                    for (int a = 0; a < colunasItens; a++)
                     {
 
-                        //percorre cada uma das colunas
+                        //verifica o tipo de dados da coluna
 
-                        for (int a = 0; a < colunasItens; a++)
+                        if (drItens.GetFieldType(a).ToString() == "System.Int32")
                         {
 
-                            //verifica o tipo de dados da coluna
-
-                            if (drItens.GetFieldType(a).ToString() == "System.Int32")
-                            {
-
-                                linhaItens[a] = drItens.GetInt32(a).ToString();
-
-                            }
-
-
-                            if (drItens.GetFieldType(a).ToString() == "System.String")
-                            {
-
-                                linhaItens[a] = drItens.GetString(a).ToString();
-
-                            }
-
-                            if (drItens.GetFieldType(a).ToString() == "System.Decimal")
-                            {
-
-                                linhaItens[a] = drItens.GetDecimal(a).ToString();
-
-                            }
+                            linhaItens[a] = drItens.GetInt32(a).ToString();
 
                         }
-                        dgAtualizaItens.Rows.Add(linhaFuncionarios);
-                        conn.Close();
 
 
-
-                        string gridPratos = "select id, nome, valorvenda from ItensCardapio where categoria = Pratos";
-                        conn = Conexao.obterConexao();
-                        SqlCommand cmdPratos = new SqlCommand(gridPratos, conn);
-                        cmdPratos.CommandType = CommandType.Text;
-                        SqlDataReader drPratos = cmdPratos.ExecuteReader();
-                        int colunasPratos = drPratos.FieldCount;
-                        string[] linhaPratos = new string[colunasPratos];
-                        while (drPratos.Read())
+                        if (drItens.GetFieldType(a).ToString() == "System.String")
                         {
 
-                            //percorre cada uma das colunas
+                            linhaItens[a] = drItens.GetString(a).ToString();
 
-                            for (int a = 0; a < colunasPratos; a++)
-                            {
-
-                                //verifica o tipo de dados da coluna
-
-                                if (drPratos.GetFieldType(a).ToString() == "System.Int32")
-                                {
-
-                                    linhaPratos[a] = drPratos.GetInt32(a).ToString();
-
-                                }
-
-
-                                if (drPratos.GetFieldType(a).ToString() == "System.String")
-                                {
-
-                                    linhaPratos[a] = drPratos.GetString(a).ToString();
-
-                                }
-
-                                if (drPratos.GetFieldType(a).ToString() == "System.Decimal")
-                                {
-
-                                    linhaPratos[a] = drPratos.GetDecimal(a).ToString();
-
-                                }
-
-                            }
-                            dgAtualizaPratos.Rows.Add(linhaPratos);
-                            conn.Close();
-
-
-                            string gridMesas = "select * from Mesa";
-                            conn = Conexao.obterConexao();
-                            SqlCommand cmdMesas = new SqlCommand(gridMesas, conn);
-                            cmdMesas.CommandType = CommandType.Text;
-                            SqlDataReader drMesas = cmdMesas.ExecuteReader();
-                            int colunasMesas = drMesas.FieldCount;
-                            string[] linhaMesas = new string[colunasMesas];
-                            while (drMesas.Read())
-                            {
-
-                                //percorre cada uma das colunas
-
-                                for (int a = 0; a < colunasMesas; a++)
-                                {
-
-                                    //verifica o tipo de dados da coluna
-
-                                    if (drMesas.GetFieldType(a).ToString() == "System.Int32")
-                                    {
-
-                                        linhaMesas[a] = drMesas.GetInt32(a).ToString();
-
-                                    }
-
-
-                                    if (drMesas.GetFieldType(a).ToString() == "System.String")
-                                    {
-
-                                        linhaMesas[a] = drMesas.GetString(a).ToString();
-
-                                    }
-
-                                }
-                                dgAtualizaMesas.Rows.Add(linhaPratos);
-                                conn.Close();
-
-
-                                // select id, nome, valorvenda from ItensCardapio where categoria = Pratos
-                                // select id, nome, valorvenda from ItensCardapio where categoria = Itens
-                            }
                         }
+
+                        if (drItens.GetFieldType(a).ToString() == "System.Decimal")
+                        {
+
+                            linhaItens[a] = drItens.GetDecimal(a).ToString();
+
+                        }
+
                     }
+                    dgAtualizaItens.Rows.Add(linhaItens);
                 }
+                //conn.Close();
+                drItens.Close();
+
+
+                string gridPratos = "select id, nome, valorvenda from ItensCardapio where categoria = 'Pratos'";
+                //conn = Conexao.obterConexao();
+                SqlCommand cmdPratos = new SqlCommand(gridPratos, conn);
+                cmdPratos.CommandType = CommandType.Text;
+                SqlDataReader drPratos = cmdPratos.ExecuteReader();
+                int colunasPratos = drPratos.FieldCount;
+                string[] linhaPratos = new string[colunasPratos];
+                while (drPratos.Read())
+                {
+
+                    //percorre cada uma das colunas
+
+                    for (int a = 0; a < colunasPratos; a++)
+                    {
+
+                        //verifica o tipo de dados da coluna
+
+                        if (drPratos.GetFieldType(a).ToString() == "System.Int32")
+                        {
+
+                            linhaPratos[a] = drPratos.GetInt32(a).ToString();
+
+                        }
+
+
+                        if (drPratos.GetFieldType(a).ToString() == "System.String")
+                        {
+
+                            linhaPratos[a] = drPratos.GetString(a).ToString();
+
+                        }
+
+                        if (drPratos.GetFieldType(a).ToString() == "System.Decimal")
+                        {
+
+                            linhaPratos[a] = drPratos.GetDecimal(a).ToString();
+
+                        }
+
+                    }
+                    dgAtualizaPratos.Rows.Add(linhaPratos);
+                }
+
+                string gridMesas = "select * from Mesa";
+                conn = Conexao.obterConexao();
+                SqlCommand cmdMesas = new SqlCommand(gridMesas, conn);
+                cmdMesas.CommandType = CommandType.Text;
+                SqlDataReader drMesas = cmdMesas.ExecuteReader();
+                int colunasMesas = drMesas.FieldCount;
+                string[] linhaMesas = new string[colunasMesas];
+                while (drMesas.Read())
+                {
+
+                    //percorre cada uma das colunas
+
+                    for (int a = 0; a < colunasMesas; a++)
+                    {
+
+                        //verifica o tipo de dados da coluna
+
+                        if (drMesas.GetFieldType(a).ToString() == "System.Int32")
+                        {
+
+                            linhaMesas[a] = drMesas.GetInt32(a).ToString();
+
+                        }
+
+
+                        if (drMesas.GetFieldType(a).ToString() == "System.String")
+                        {
+
+                            linhaMesas[a] = drMesas.GetString(a).ToString();
+
+                        }
+
+                    }
+
+
+                    // select id, nome, valorvenda from ItensCardapio where categoria = Pratos
+                    // select id, nome, valorvenda from ItensCardapio where categoria = Itens
+                    dgAtualizaMesas.Rows.Add(linhaMesas);
+
+                }
+                conn.Close();
+
+
             }
         }
 
@@ -435,7 +434,7 @@ namespace WindowsFormsApplication1
             }
             else if (rbDinheiro.Checked)
             {
-                FormPagdin dinheiro = new FormPagdin(mktotaldin.Text);
+                FormPagdin dinheiro = new FormPagdin(txtTotalPedido.Text);
                 dinheiro.Show();
             }
             else
@@ -472,7 +471,6 @@ namespace WindowsFormsApplication1
             novoform1.Show();
         }
 
-<<<<<<< HEAD
         private void btnLimpapesquisa_Click(object sender, EventArgs e)
         {
             txtBusca.Clear();
@@ -506,7 +504,8 @@ namespace WindowsFormsApplication1
 
         private void gridPedido_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-=======
+        }
+
         private void btnAtualizaPrato_Click(object sender, EventArgs e)
         {
 
@@ -521,7 +520,6 @@ namespace WindowsFormsApplication1
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
 
->>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
         }
     }
 }
