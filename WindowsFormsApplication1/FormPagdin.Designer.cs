@@ -62,23 +62,22 @@
             // maskvltrocodin
             // 
             this.maskvltrocodin.Location = new System.Drawing.Point(6, 117);
-            this.maskvltrocodin.Mask = "99.999,99";
             this.maskvltrocodin.Name = "maskvltrocodin";
             this.maskvltrocodin.Size = new System.Drawing.Size(100, 20);
             this.maskvltrocodin.TabIndex = 19;
+            this.maskvltrocodin.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskvltrocodin_MaskInputRejected);
             // 
             // maskvlrecdin
             // 
             this.maskvlrecdin.Location = new System.Drawing.Point(6, 78);
-            this.maskvlrecdin.Mask = "99.999,99";
             this.maskvlrecdin.Name = "maskvlrecdin";
             this.maskvlrecdin.Size = new System.Drawing.Size(100, 20);
             this.maskvlrecdin.TabIndex = 18;
+            this.maskvlrecdin.Leave += new System.EventHandler(this.maskvlrecdin_Leave);
             // 
             // maskvltotaldin
             // 
             this.maskvltotaldin.Location = new System.Drawing.Point(6, 39);
-            this.maskvltotaldin.Mask = "99.999,99";
             this.maskvltotaldin.Name = "maskvltotaldin";
             this.maskvltotaldin.Size = new System.Drawing.Size(100, 20);
             this.maskvltotaldin.TabIndex = 17;
@@ -92,6 +91,7 @@
             this.btnConcPagdin.TabIndex = 15;
             this.btnConcPagdin.Text = "Concluir";
             this.btnConcPagdin.UseVisualStyleBackColor = true;
+            this.btnConcPagdin.Click += new System.EventHandler(this.btnConcPagdin_Click);
             // 
             // btnLimppagdin
             // 
@@ -111,30 +111,7 @@
             this.btnCancelpagdin.TabIndex = 13;
             this.btnCancelpagdin.Text = "Cancelar";
             this.btnCancelpagdin.UseVisualStyleBackColor = true;
-            //this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click);
-
-            // 
-            // txtValorTrocoDin
-            // 
-            //this.txtValorTrocoDin.Location = new System.Drawing.Point(6, 117);
-            //this.txtValorTrocoDin.Name = "txtValorTrocoDin";
-            //this.txtValorTrocoDin.Size = new System.Drawing.Size(100, 20);
-            //this.txtValorTrocoDin.TabIndex = 12;
-            // 
-            // txtValorDinTotal
-            // 
-            //this.txtValorDinTotal.Location = new System.Drawing.Point(6, 39);
-            //this.txtValorDinTotal.Name = "txtValorDinTotal";
-            //this.txtValorDinTotal.Size = new System.Drawing.Size(100, 20);
-            //this.txtValorDinTotal.TabIndex = 10;
-            // 
-            // txtValorRecDin
-            // 
-            //this.txtValorRecDin.Location = new System.Drawing.Point(6, 78);
-            //this.txtValorRecDin.Name = "txtValorRecDin";
-            //this.txtValorRecDin.Size = new System.Drawing.Size(100, 20);
-            //this.txtValorRecDin.TabIndex = 11;
-            //this.txtValorRecDin.Leave += new System.EventHandler(this.txtValorRecDin_Leave);
+            this.btnCancelpagdin.Click += new System.EventHandler(this.btnCancelpagdin_Click_1);
             // 
             // label1
             // 

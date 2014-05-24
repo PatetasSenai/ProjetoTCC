@@ -61,6 +61,7 @@
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.mktotaldin = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -90,7 +91,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.gridEstoque = new System.Windows.Forms.DataGridView();
             this.tabMetricas = new System.Windows.Forms.TabPage();
-            this.mktotaldin = new System.Windows.Forms.MaskedTextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabCadProduto.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -145,6 +146,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.btnOK);
             this.groupBox3.Controls.Add(this.rbCheque);
             this.groupBox3.Controls.Add(this.rbCartao);
@@ -158,7 +160,7 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(214, 39);
+            this.btnOK.Location = new System.Drawing.Point(146, 41);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(101, 23);
             this.btnOK.TabIndex = 8;
@@ -476,6 +478,14 @@
             this.groupBox4.Text = "Fechar Conta";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
+            // mktotaldin
+            // 
+            this.mktotaldin.Location = new System.Drawing.Point(401, 204);
+            this.mktotaldin.Mask = "99.999,99";
+            this.mktotaldin.Name = "mktotaldin";
+            this.mktotaldin.Size = new System.Drawing.Size(100, 20);
+            this.mktotaldin.TabIndex = 18;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -767,13 +777,15 @@
             this.tabMetricas.Text = "Metricas";
             this.tabMetricas.UseVisualStyleBackColor = true;
             // 
-            // mktotaldin
+            // button3
             // 
-            this.mktotaldin.Location = new System.Drawing.Point(401, 204);
-            this.mktotaldin.Mask = "99.999,99";
-            this.mktotaldin.Name = "mktotaldin";
-            this.mktotaldin.Size = new System.Drawing.Size(100, 20);
-            this.mktotaldin.TabIndex = 18;
+            this.button3.Location = new System.Drawing.Point(303, 41);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 23);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Sair";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormCaixa
             // 
@@ -883,6 +895,7 @@
         private System.Windows.Forms.DataGridView dgAtualizaItens;
         private System.Windows.Forms.DataGridView dgAtualizaPratos;
         private System.Windows.Forms.MaskedTextBox mktotaldin;
+        private System.Windows.Forms.Button button3;
 //>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
     }
 }

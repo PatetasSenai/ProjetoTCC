@@ -18,33 +18,24 @@ namespace WindowsFormsApplication1
         }
 
         String busca = null;
-        FormPagdin frmAtualizar = null;
+        FormCaixa frmAtualizar = null;
 
-        public FormPagdin( String busca)
+        public FormPagdin(String busca, FormCaixa frm)
         {
             InitializeComponent();
             maskvltotaldin.Text = busca.ToString();
+            this.frmAtualizar = frm;
             MessageBox.Show(busca.ToString());
         }
 
         private void FormPagdin_Load(object sender, EventArgs e)
         {
-            //txtValorDinTotal.Enabled = false;
+            maskvltotaldin.Enabled = false;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-//<<<<<<< HEAD
-        private void txtValorRecDin_Leave(object sender, EventArgs e)
-        {
-            //           double valortotal = Double.Parse(txtValorDinTotal.Text);
-            //           double valorrecebido = Convert.ToDouble(txtValorRecDin.Text);
-            //           double valortroco = valorrecebido - valortotal;
-            //           txtValorTrocoDin.Text = valortroco.ToString();
-            //=======
         }
 
         private void btnCancelpagdin_Click(object sender, EventArgs e)
@@ -54,35 +45,61 @@ namespace WindowsFormsApplication1
             {
                 this.Close();
             }
-//>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
+
         }
 
         private void btnLimppagdin_Click(object sender, EventArgs e)
         {
-//<<<<<<< HEAD
-//            txtValorTrocoDin.Clear();
-//            txtValorRecDin.Clear();
-            //txtValorDinTotal.Clear();
+
+            maskvltrocodin.Clear();
+            maskvlrecdin.Clear();
         }
 
-        //private void btnCancelpagdin_Click(object sender, EventArgs e)
-        //{
-            /*txtValorDinTotal.Clear();
-            txtValorRecDin.Clear();
-            txtValorTrocoDin.Clear();*/
-            //this.Close();
-//=======
-            //maskvltotaldin.Clear();
-            //maskvlrecdin.Clear();
-            //maskvltrocodin.Clear();
-        //}
 
         public string valortotal { get; set; }
 
         private void maskvltotaldin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+        }
 
-//>>>>>>> 89b25ca155ec3f553b567d8841a83098dc3b9737
+        private void maskvltrocodin_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelpagdin_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maskvlrecdin_Leave(object sender, EventArgs e)
+        {
+            double valortotal = Double.Parse(maskvltotaldin.Text);
+            double valorrecebido = Convert.ToDouble(maskvlrecdin.Text);
+            double valortroco = valorrecebido - valortotal;
+            maskvltrocodin.Text = valortroco.ToString();
+        }
+
+        private void btnConcPagdin_Click(object sender, EventArgs e)
+        {
+            Conta c = frmAtualizar.novaConta();            
+            GravaConta conta = new GravaConta();
+            if (conta.novo(c) != 0)
+            {
+                MessageBox.Show(c.IdConta.ToString());
+                List<Comanda> lista = frmAtualizar.getGridItens(c);
+                gravaComanda grava = new gravaComanda();
+
+                if (grava.salvar(lista) > 0 )
+                {
+                    MessageBox.Show("Pagamento finalizado");
+                }
+                else
+                {
+                    MessageBox.Show("Erro no pagamento.");
+                }
+            }
+            
         }
     }
 }

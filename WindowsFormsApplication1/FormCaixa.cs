@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         private Funcionario funcCaixa;
         double totalPedido = 0;
 
+
         public void atualiza(int codigo, string nomeP, double valor)
         {
             txtCodigoItem.Text = codigo.ToString();
@@ -63,7 +64,7 @@ namespace WindowsFormsApplication1
         {
             if (radioButton6.Checked == true)
             {
-                FormPagdin frm = new FormPagdin(mktotaldin.Text);
+                FormPagdin frm = new FormPagdin(mktotaldin.Text, this);
                 frm.Show();
             }
         }
@@ -434,7 +435,7 @@ namespace WindowsFormsApplication1
             }
             else if (rbDinheiro.Checked)
             {
-                FormPagdin dinheiro = new FormPagdin(txtTotalPedido.Text);
+                FormPagdin dinheiro = new FormPagdin(txtTotalPedido.Text,this);
                 dinheiro.Show();
             }
             else
@@ -520,6 +521,53 @@ namespace WindowsFormsApplication1
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormLogin lgo = new FormLogin();
+            lgo.Show();
+        }
+
+        public List<Comanda> getGridItens(Conta conta)
+        {
+            if (conta != null)
+            {
+                List<Comanda> lista = new List<Comanda>();
+                for (int row = 0; row < gridPedido.Rows.Count; row++)
+                {
+                    Comanda c = new Comanda();
+                    if (gridPedido.Rows[row].Cells[0].Value != null)
+                    {
+                        c.Iditens = Convert.ToInt32(gridPedido.Rows[row].Cells[0].Value.ToString());
+                        c.Quantidade = Convert.ToInt32(gridPedido.Rows[row].Cells[3].Value.ToString());
+                        c.Total = Convert.ToDecimal(gridPedido.Rows[row].Cells[4].Value.ToString());
+                        c.Datainicioatendimento = DateTime.Now;
+                        c.Datafinalatendimento = DateTime.Now;
+                        c.Idfuncionario = this.funcCaixa.Id;
+                        c.Idconta = conta.IdConta;
+
+                        lista.Add(c);
+                    }
+                }
+                return lista;
+            }
+            return null;
+        }
+
+        public Conta novaConta()
+        {
+            Conta c = new Conta();
+            c.IdCaixa = this.funcCaixa.Id;
+            c.IdMesa = 0;
+            c.DataFechamento = DateTime.Now;
+            c.DataAbertura = DateTime.Now;
+            c.ValorTotal = Convert.ToDecimal(txtTotalPedido.Text);
+            c.IdPagamento = 1;
+
+            return c;            
+ 
         }
     }
 }

@@ -59,7 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comanda.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="Conta.cs" />
     <Compile Include="FormCadFun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +80,8 @@
     <Compile Include="FormCadPratos.Designer.cs">
       <DependentUpon>FormCadPratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="gravaComanda.cs" />
+    <Compile Include="GravaConta.cs" />
     <Compile Include="PesquisaItens.cs">
       <SubType>Form</SubType>
     </Compile>
