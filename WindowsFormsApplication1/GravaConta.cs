@@ -34,7 +34,6 @@ namespace WindowsFormsApplication1
                 c.IdConta = Convert.ToInt32(conta);
                 conn.Close();
                 return c.IdConta;
-                
             }
             catch (Exception erro)
             {
